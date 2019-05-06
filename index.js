@@ -45,7 +45,6 @@ async function login() {
 async function getFriends() {
     let allFriends = []
     for (let i = 0; i < 10; i++) {
-        await page.screenshot({ path: 'facebook_' + (3 + i) + '.png' })
         let friends = await page.$$eval('div.fsl.fwb.fcb>a', friends => friends.map((a) => {
             return {
                 name: a.innerText,
