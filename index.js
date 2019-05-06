@@ -24,12 +24,11 @@ async function login() {
     await page.type('#email', user_data.email, { delay: 30 })
     await page.type('#pass', user_data.password, { delay: 30 })
     let loginButton = await page.$('#loginbutton input')
-    await loginButton.click()
+    await loginButton.click() 
     await page.waitForNavigation()
     await page.goto('https://www.facebook.com/Pierre.dumaydmy/friends')
     await page.waitFor(3000)
     let friends = await getFriends()
-    console.log(friends)
     await browser.close()
 
     //GET ALL FRIENDS LIST
